@@ -16,3 +16,29 @@ Functii folosite:
 ➔def plot_coefficients(classifier, feature_names, top_features=10): Afișeaza cele mai negative (spam) 10 cuvinte și cele mai pozitive (non-spam) 10
 cuvinte.
 
+➔Build the vocabulary:
+    BOW = BagOfWords()
+    BOW.build_vocabulary(training_sentences)
+
+➔Transforming text into numerical features:
+    train_feat = BOW.get_features(training_sentences)
+    test_feat = BOW.get_features(test_sentences)
+    
+➔Normalizing numerical features:
+    norm_data = normalize_data(train_feat,test_feat,'l2')
+    
+➔SVM model training:
+    obj = svm.SVC(1,kernel = 'linear')
+    obj.fit(norm_data[0],training_labels)
+    
+➔Predictions:
+    predictions = obj.predict(norm_data[1])
+ 
+➔Accuracy:
+    accur = accuracy_score(test_labels,predictions)
+
+➔F1-score:
+    f1_scor = f1_score(test_labels,predictions,average =None)
+    
+➔Printing the most important features (negative and positive):
+    plot_coefficients(obj, norm_data[1])
