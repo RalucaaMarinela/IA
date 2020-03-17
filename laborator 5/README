@@ -13,7 +13,7 @@ Functii folosite:
 ➔def build_vocabulary(self,data): primeste ca parametru o lista de mesaje si construieste vocabularul be baza acesteia
 ➔def get_features(self,data): primeste ca parametru o lista de mesaje si returneaza o matrice definita astfel: 𝒇𝒆𝒂𝒕𝒖𝒓𝒆𝒔(𝒔𝒂𝒎𝒑𝒍𝒆_𝒊𝒅𝒙,𝒘𝒐𝒓𝒅_𝒊𝒅𝒙) = 𝒏𝒖𝒎𝒂𝒓𝒖𝒍 𝒅𝒆 𝒂𝒑𝒂𝒓𝒊𝒕𝒊𝒊 𝒂𝒍
  𝒄𝒖𝒗𝒂𝒏𝒕𝒖𝒍𝒖𝒊 𝒄𝒖 𝒊𝒅− 𝒖𝒍 𝒘𝒐𝒓𝒅_𝒊𝒅𝒙 𝒊𝒏 𝒅𝒐𝒄𝒖𝒎𝒆𝒏𝒕𝒖𝒍 𝒔𝒂𝒎𝒑𝒍𝒆_𝒊𝒅𝒙
-➔def plot_coefficients(classifier, feature_names, top_features=10): Afișeaza cele mai negative (spam) 10 cuvinte și cele mai pozitive (non-spam) 10
+➔def coefficients(classifier, feature_names, top_features=10): Afișeaza cele mai negative (spam) 10 cuvinte și cele mai pozitive (non-spam) 10
 cuvinte.
 
 ➔Build the vocabulary:
@@ -41,4 +41,4 @@ cuvinte.
     f1_scor = f1_score(test_labels,predictions,average =None)
     
 ➔Printing the most important features (negative and positive):
-    plot_coefficients(obj, norm_data[1])
+    coefficients(obj, norm_data[1])
