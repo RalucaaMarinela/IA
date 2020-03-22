@@ -1,0 +1,26 @@
+1. Definiți o metodă care primește doi parametrii, datele de antrenare și cele de
+testare și returnează datele normalizate. Folosiți o metodă de normalizare
+corespunzătoare pentru setul de date Car Price Prediction.
+
+  ➔ def normalize_data(train_data, test_data):
+   
+2. Folosind mulțimea de antrenare din setul de date Car Price Prediction
+antrenați un model de regresie liniară folosind validarea încrucișată cu 3 fold-uri.
+Calculați valoarea medie a funcțiilor MSE și MAE.
+
+   ➔ Split train in 3 folds
+          training_data_1, prices_1 = training_data[:num_samples_fold], prices[:num_samples_fold]
+          training_data_2, prices_2 = training_data[num_samples_fold: 2 * num_samples_fold], prices[num_samples_fold: 2 * num_samples_fold]
+          training_data_3, prices_3 = training_data[2 * num_samples_fold:], prices[2 * num_samples_fold:]
+   ➔def step(train_data, train_labels, test_data, test_labels,model):
+   
+3. Folosind mulțimea de antrenare din setul de date Car Price Prediction
+antrenați un model de regresie ridge folosind validarea încrucișată cu 3 fold-uri.
+Calculați valoarea medie a funcțiilor MSE și MAE. Verificați care valoare a lui 𝛼, 𝛼 ∈
+{1, 10, 100, 1000} obține o performanță mai bună
+
+4. Folosind cel mai performant alpha de la punctul anterior, antrenați un model
+de regresie ridge pe întreaga mulțime de antrenare, afișați coeficienți și bias-ul
+regresiei. 
+       
+
