@@ -1,0 +1,30 @@
+                           Perceptronul și rețele de perceptroni în Scikit-learn
+
+➔Scikit-learn pentru clasificarea unor date 3d, si o retea neuronala pentru
+clasificarea cifrelor scrise de mana. Baza de date pe care o vom folosi, pentru
+clasificare cifrelor scrise de mana, este MNIST.
+
+
+➔1. Antrenati un perceptron pe multimea de puncte 3d, pana cand eroare nu se
+imbunatateste cu 1e-5 fata de epocile anterioare, cu rata de invatare 0.1. Calculati
+acuratetea pe multimea de antrenare si testare, apoi afisati ponderile, bias-ul si
+numarul de epoci parcuse pana la convergenta. Plotati planul de decizie al
+clasificatorului cu ajutorului functiei plot3d_data_and_decision_function
+
+
+            sc = preprocessing.StandardScaler()
+            sc.fit(X)
+            X_sc = sc.transform(X)
+            X_test_sc= sc.transform(X_test)
+
+            print("Acuratete pe multimea de antrenare: ", perceptron_model.score(X_sc, y))
+            print("Acuratete pe multimea de testare: ", perceptron_model.score(X_test_sc, y_test))
+
+            def plot3d_data_and_decision_function(X, y, W, b):
+
+➔ 2. Antrenati o retea de perceptroni care sa clasifice cifrele scrise de mana
+MNIST. Datele trebuie normalizate prin scaderea mediei si impartirea la deviatia
+standard. Antrenati si testati urmatoarele configuratii de retele:
+
+
+
